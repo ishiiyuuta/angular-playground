@@ -1,0 +1,21 @@
+li.selected {
+    background-color: #e2e2e2;
+    font-weight: bold;
+    /* Add any other styles you want for the selected items */
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  li:hover {
+    background-color: #f2f2f2;
+  }
+  
