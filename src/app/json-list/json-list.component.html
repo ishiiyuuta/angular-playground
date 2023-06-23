@@ -1,4 +1,4 @@
-<input type="text" [(ngModel)]="searchTerm" placeholder="Search">
+<!-- <input type="text" [(ngModel)]="searchTerm" placeholder="Search">
 
 <ul>
   <li *ngFor="let item of items | filter: searchTerm" [class.selected]="isSelected(item.value)" (click)="selectItem(item.value)">
@@ -10,7 +10,26 @@
   <h4>Selected Items:</h4>
   <ul>
     <li *ngFor="let selectedItem of selectedItems">
-      {{ selectedItem }}
+      {{ selectedItem.key }}: {{ selectedItem.value }}
+      <button (click)="deselectItem(selectedItem.value)">Deselect</button>
+    </li>
+  </ul>
+</div> -->
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search">
+
+<ul>
+  <li *ngFor="let item of items | filter: searchTerm" [class.selected]="isSelected(item)" (click)="selectItem(item)">
+    <span>{{ item.value }}</span>
+    
+  </li>
+</ul>
+
+<div *ngIf="selectedItems.length > 0">
+  <h4>Selected Items:</h4>
+  <ul>
+    <li *ngFor="let selectedItem of selectedItems">
+      {{ selectedItem.key }}: {{ selectedItem.value }}
+      <button (click)="deselectItem(selectedItem.key)">Deselect</button>
     </li>
   </ul>
 </div>

@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
     if (!term || term.trim() === '') {
       return items;
     }
-
-    return items.filter(item => item.name.toLowerCase().includes(term.toLowerCase()));
+    console.log(items)
+    return items.filter(item => item.value.toLowerCase().includes(term.toLowerCase()));
   }
 }
